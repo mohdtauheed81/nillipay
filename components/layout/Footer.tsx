@@ -1,7 +1,16 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
+  const [year, setYear] = useState(2025)
+
+  useEffect(() => {
+    setYear(new Date().getFullYear())
+  }, [])
+
   const footerLinks = {
     company: [
       { name: 'About Us', href: '/about' },
@@ -105,22 +114,22 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-400 mb-4 md:mb-0">
-            © {new Date().getFullYear()} BankPay. All rights reserved.
+          <p className="text-sm text-gray-400 mb-4 md:mb-0" suppressHydrationWarning>
+            © {year} BankPay. All rights reserved.
           </p>
 
           {/* Social Links */}
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className="hover:text-white transition-colors" aria-label="Facebook">
               <Facebook className="w-5 h-5" />
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className="hover:text-white transition-colors" aria-label="Twitter">
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className="hover:text-white transition-colors" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className="hover:text-white transition-colors" aria-label="Instagram">
               <Instagram className="w-5 h-5" />
             </a>
           </div>
