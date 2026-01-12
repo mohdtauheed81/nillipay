@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown, Receipt, Globe } from 'lucide-react'
@@ -11,6 +11,7 @@ export default function Header() {
   const [servicesDropdown, setServicesDropdown] = useState(false)
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // Handle mounting state
   useEffect(() => {
@@ -32,18 +33,40 @@ export default function Header() {
     setServicesDropdown(false)
   }, [pathname])
 
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current)
+      }
+    }
+  }, [])
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current)
+    }
+    setServicesDropdown(true)
+  }
+
+  const handleMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setServicesDropdown(false)
+    }, 200) // 200ms delay before closing
+  }
+
   const services = [
     {
       icon: Receipt,
       name: 'BBPS',
       description: 'Complete bill payment solution',
-      href: '/services/bbps'
+      href: '/bbps'
     },
     {
       icon: Globe,
       name: 'Travel',
       description: 'Full-suite travel booking platform',
-      href: '/services/travel'
+      href: '/travel'
     }
   ]
 
@@ -77,8 +100,21 @@ export default function Header() {
             transform: translateY(0);
           }
         }
+        @keyframes fadeOut {
+          from {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          to {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+        }
         .animate-fadeIn {
-          animation: fadeIn 0.2s ease-out;
+          animation: fadeIn 0.2s ease-out forwards;
+        }
+        .animate-fadeOut {
+          animation: fadeOut 0.15s ease-in forwards;
         }
       `}} />
       <header
@@ -94,12 +130,12 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 z-50">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center transform hover:scale-105 transition-transform">
-                <span className="text-white font-bold text-xl">B</span>
+                <span className="text-white font-bold text-xl">N</span>
               </div>
               <span className={`text-xl font-bold transition-colors ${
                 mounted && isScrolled ? 'text-gray-900' : 'text-gray-900'
               }`}>
-                BankPay
+                NeeliPay
               </span>
             </Link>
 
@@ -108,34 +144,40 @@ export default function Header() {
               {navigation.map((item) => (
                 <div
                   key={item.name}
-                  className="relative group"
+                  className="relative"
                   onMouseEnter={() => {
                     if (item.hasDropdown) {
-                      setServicesDropdown(true)
+                      handleMouseEnter()
                     }
                   }}
                   onMouseLeave={() => {
-                    setServicesDropdown(false)
+                    if (item.hasDropdown) {
+                      handleMouseLeave()
+                    }
                   }}
                 >
                   {item.hasDropdown ? (
                     <>
                       <button
                         className={`flex items-center space-x-1 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                          isActive(item.href)
+                          isActive(item.href) || servicesDropdown
                             ? 'text-blue-600 bg-blue-50'
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                         }`}
                       >
                         <span>{item.name}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
                           servicesDropdown ? 'rotate-180' : ''
                         }`} />
                       </button>
 
                       {/* Dropdown Menu */}
                       {servicesDropdown && (
-                        <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 animate-fadeIn">
+                        <div
+                          className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 animate-fadeIn"
+                          onMouseEnter={handleMouseEnter}
+                          onMouseLeave={handleMouseLeave}
+                        >
                           <div className="grid grid-cols-1 gap-1 p-2">
                             {services.map((service) => (
                               <Link
@@ -147,7 +189,7 @@ export default function Header() {
                                   <service.icon className="w-5 h-5 text-blue-600" />
                                 </div>
                                 <div className="flex-1">
-                                  <div className="font-semibold text-gray-900 group-hover:text-blue-600">
+                                  <div className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
                                     {service.name}
                                   </div>
                                   <div className="text-sm text-gray-500">
@@ -180,7 +222,7 @@ export default function Header() {
             <div className="hidden lg:flex items-center">
               <Link
                 href="/login"
-                className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 font-semibold shadow-lg hover:shadow-xl transition-all"
+                className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
               >
                 Login
               </Link>
@@ -205,24 +247,30 @@ export default function Header() {
                     <div>
                       <button
                         onClick={() => setServicesDropdown(!servicesDropdown)}
-                        className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-gray-50"
+                        className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
                       >
                         <span className="font-medium">{item.name}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
                           servicesDropdown ? 'rotate-180' : ''
                         }`} />
                       </button>
 
                       {/* Mobile Dropdown Content */}
                       {servicesDropdown && (
-                        <div className="pl-4 mt-1 space-y-1">
+                        <div className="bg-gray-50 py-2">
                           {services.map((service) => (
                             <Link
                               key={service.name}
                               href={service.href}
-                              className="flex items-start space-x-3 px-4 py-3 rounded-lg hover:bg-blue-50"
+                              className="flex items-start space-x-3 px-6 py-3 hover:bg-white transition-colors"
+                              onClick={() => {
+                                setIsOpen(false)
+                                setServicesDropdown(false)
+                              }}
                             >
-                              <service.icon className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <service.icon className="w-5 h-5 text-blue-600" />
+                              </div>
                               <div>
                                 <div className="font-medium text-gray-900">{service.name}</div>
                                 <div className="text-sm text-gray-500">{service.description}</div>
@@ -235,11 +283,12 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`block px-4 py-3 rounded-lg font-medium ${
+                      className={`block px-4 py-3 font-medium transition-colors ${
                         isActive(item.href)
                           ? 'text-blue-600 bg-blue-50'
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
+                      onClick={() => setIsOpen(false)}
                     >
                       {item.name}
                     </Link>
@@ -248,10 +297,11 @@ export default function Header() {
               ))}
 
               {/* Mobile Login Button */}
-              <div className="px-4 pt-4 pb-4 border-t border-gray-100 mt-4">
+              <div className="px-4 py-4">
                 <Link
                   href="/login"
-                  className="block text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-lg hover:from-blue-700 hover:to-blue-800 font-semibold shadow-sm"
+                  className="block text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-lg hover:from-blue-700 hover:to-blue-800 font-semibold shadow-sm transition-all"
+                  onClick={() => setIsOpen(false)}
                 >
                   Login
                 </Link>
@@ -260,6 +310,8 @@ export default function Header() {
           )}
         </nav>
       </header>
+      {/* Spacer to prevent content from hiding under fixed header */}
+      <div className="h-20"></div>
     </>
   )
 }

@@ -161,7 +161,7 @@ export default function AboutUs() {
   ]
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* ==================== BREADCRUMB ==================== */}
       <section className="bg-gradient-to-r from-blue-50 to-purple-50 py-6 border-b border-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -254,7 +254,7 @@ export default function AboutUs() {
       {/* ==================== MISSION & VISION ==================== */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
+          <div className=" mx-auto">
             <div className="flex justify-center mb-8">
               <div className="inline-flex bg-white rounded-xl shadow-md border border-gray-200 p-1">
                 <button

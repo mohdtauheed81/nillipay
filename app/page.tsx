@@ -125,7 +125,7 @@ export default function Home() {
       icon: Users,
       value: '50,000+',
       label: 'Active Businesses',
-      description: 'Trust BankPay for payments',
+      description: 'Trust NeeliPay for payments',
       gradient: 'from-purple-500 to-pink-500',
       delay: 'delay-100'
     },
@@ -155,7 +155,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* ==================== HERO SECTION ==================== */}
       <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20 overflow-hidden">
         {/* Background Decorations */}
@@ -387,7 +387,7 @@ export default function Home() {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Why Choose BankPay?
+              Why Choose NeeliPay?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Built for businesses of all sizes with enterprise-grade features that help you accept payments securely and grow faster
@@ -569,7 +569,7 @@ export default function Home() {
               Ready to Get Started?
             </h2>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-              Join 50,000+ businesses already using BankPay to accept payments and grow their revenue
+              Join 50,000+ businesses already using NeeliPay to accept payments and grow their revenue
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 max-w-3xl mx-auto">

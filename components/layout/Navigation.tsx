@@ -36,13 +36,13 @@ export default function Navigation() {
       icon: Receipt,
       name: 'BBPS',
       description: 'Complete bill payment solution',
-      href: '/services/bbps'
+      href: '/bbps'
     },
     {
       icon: Globe,
       name: 'Travel',
       description: 'Full-suite travel booking platform',
-      href: '/services/travel'
+      href: '/travel'
     }
   ]
 

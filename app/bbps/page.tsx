@@ -228,7 +228,7 @@ export default function BBPSPage() {
   ]
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* ==================== BREADCRUMB ==================== */}
       <section className="bg-gradient-to-r from-blue-50 to-purple-50 py-6 border-b border-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -236,10 +236,7 @@ export default function BBPSPage() {
             <Link href="/" className="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
               <Home className="w-4 h-4" />
             </Link>
-            <ChevronRight className="w-4 h-4 text-gray-400" />
-            <Link href="/services" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Services
-            </Link>
+
             <ChevronRight className="w-4 h-4 text-gray-400" />
             <span className="text-blue-600 font-medium">BBPS</span>
           </div>

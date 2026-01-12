@@ -18,12 +18,6 @@ export default function Footer() {
       { name: 'Press', href: '/press' },
       { name: 'Blog', href: '/blog' },
     ],
-    products: [
-      { name: 'Payment Gateway', href: '/services' },
-      { name: 'Payment Links', href: '/services' },
-      { name: 'Subscriptions', href: '/services' },
-      { name: 'QR Codes', href: '/services' },
-    ],
     resources: [
       { name: 'Documentation', href: '/docs' },
       { name: 'API Reference', href: '/api' },
@@ -46,26 +40,44 @@ export default function Footer() {
           <div className="col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">B</span>
+                <span className="text-white font-bold text-xl">N</span>
               </div>
-              <span className="text-xl font-bold text-white">BankPay</span>
+              <span className="text-xl font-bold text-white">NeeliPay</span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-xs">
               Secure and reliable payment gateway solutions for businesses of all sizes.
             </p>
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-sm">
-                <Mail className="w-4 h-4" />
-                <span>support@bankpay.in</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <Phone className="w-4 h-4" />
-                <span>+91 1800-123-4567</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <MapPin className="w-4 h-4" />
-                <span>Mumbai, India</span>
-              </div>
+
+            {/* Social Links */}
+            <div className="flex space-x-3">
+              <a
+                href="#"
+                className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-400 transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-600 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -75,7 +87,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-white transition-colors">
+                  <Link href={link.href} className="hover:text-white transition-colors text-sm">
                     {link.name}
                   </Link>
                 </li>
@@ -83,13 +95,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Products */}
+          {/* Resources */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Products</h3>
+            <h3 className="text-white font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
-              {footerLinks.products.map((link) => (
+              {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-white transition-colors">
+                  <Link href={link.href} className="hover:text-white transition-colors text-sm">
                     {link.name}
                   </Link>
                 </li>
@@ -103,7 +115,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-white transition-colors">
+                  <Link href={link.href} className="hover:text-white transition-colors text-sm">
                     {link.name}
                   </Link>
                 </li>
@@ -112,27 +124,68 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Contact Information Section */}
+        <div className="border-t border-gray-800 pt-8 pb-8">
+          <h3 className="text-white font-semibold mb-4 text-lg">Contact Us</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Email */}
+            <div className="flex items-start space-x-3">
+              <div className="bg-blue-600/20 rounded-lg p-2 flex-shrink-0">
+                <Mail className="w-5 h-5 text-blue-400" />
+              </div>
+              <div>
+                <p className="text-white font-medium mb-1">Email</p>
+                <a href="mailto:support@neelipay.in" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  support@neelipay.in
+                </a>
+                <br />
+                <a href="mailto:sales@neelipay.in" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  sales@neelipay.in
+                </a>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <div className="flex items-start space-x-3">
+              <div className="bg-green-600/20 rounded-lg p-2 flex-shrink-0">
+                <Phone className="w-5 h-5 text-green-400" />
+              </div>
+              <div>
+                <p className="text-white font-medium mb-1">Phone</p>
+                <a href="tel:+911800123456" className="text-gray-400 hover:text-white transition-colors text-sm block">
+                  +91 1800-123-4567 (Toll Free)
+                </a>
+                <a href="tel:+912212345678" className="text-gray-400 hover:text-white transition-colors text-sm block">
+                  +91 22 1234 5678
+                </a>
+              </div>
+            </div>
+
+            {/* Address */}
+            <div className="flex items-start space-x-3">
+              <div className="bg-purple-600/20 rounded-lg p-2 flex-shrink-0">
+                <MapPin className="w-5 h-5 text-purple-400" />
+              </div>
+              <div>
+                <p className="text-white font-medium mb-1">Address</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  NeeliPay Technologies Pvt Ltd<br />
+                  Bandra Kurla Complex<br />
+                  Mumbai - 400051, India
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400 mb-4 md:mb-0" suppressHydrationWarning>
-            © {year} BankPay. All rights reserved.
+            © {year} NeeliPay. All rights reserved.
           </p>
 
-          {/* Social Links */}
-          <div className="flex space-x-4">
-            <a href="#" className="hover:text-white transition-colors" aria-label="Facebook">
-              <Facebook className="w-5 h-5" />
-            </a>
-            <a href="#" className="hover:text-white transition-colors" aria-label="Twitter">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="hover:text-white transition-colors" aria-label="LinkedIn">
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a href="#" className="hover:text-white transition-colors" aria-label="Instagram">
-              <Instagram className="w-5 h-5" />
-            </a>
-          </div>
+          {/* Additional Links */}
+
         </div>
       </div>
     </footer>
