@@ -3,7 +3,7 @@
 import {
   ArrowRight, Star, Play, CheckCircle, Shield, Zap, Globe, CreditCard,
   Lock, TrendingUp, Users, RefreshCw, Smartphone, BarChart3, Wallet,
-  Award, Link2, QrCode, Clock, Sparkles
+  Award, Link2, QrCode, Clock, Sparkles, Receipt
 } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
@@ -95,36 +95,20 @@ export default function Home() {
 
   const services = [
     {
-      icon: CreditCard,
-      title: 'Payment Gateway',
-      description: 'Seamless online payment collection with multiple payment options for your website or app',
-      features: ['Credit/Debit Cards', 'UPI Payments', 'Net Banking', 'Digital Wallets'],
+      icon: Receipt,
+      title: 'BBPS Bill Payment',
+      description: 'Complete bill payment solution for your business. Integrate BBPS services and offer your customers seamless bill payments',
+      features: ['1500+ Billers', 'All Bill Categories', 'Instant Confirmation', 'API Integration'],
       gradient: 'from-blue-500 to-cyan-500',
-      href: '/services/payment-gateway'
+      href: '/services/bbps'
     },
     {
-      icon: Link2,
-      title: 'Payment Links',
-      description: 'Share payment links via SMS, email, or social media without any coding required',
-      features: ['No coding required', 'Instant setup', 'Track payments', 'Custom branding'],
+      icon: Globe,
+      title: 'Travel Services',
+      description: 'Full-suite travel booking platform for B2B partners. Book flights, hotels, buses, and more with competitive rates',
+      features: ['Flight Booking', 'Hotel Booking', 'Bus Booking', 'Wholesale Rates'],
       gradient: 'from-purple-500 to-pink-500',
-      href: '/services/payment-links'
-    },
-    {
-      icon: RefreshCw,
-      title: 'Subscriptions',
-      description: 'Automated recurring billing for subscription-based businesses with flexible plans',
-      features: ['Auto-debit', 'Flexible billing', 'Smart retry logic', 'Detailed analytics'],
-      gradient: 'from-orange-500 to-red-500',
-      href: '/services/subscriptions'
-    },
-    {
-      icon: QrCode,
-      title: 'QR Code Payments',
-      description: 'Dynamic QR codes for in-store and online payments with instant notifications',
-      features: ['UPI QR codes', 'Instant payments', 'Contactless', 'Track all sales'],
-      gradient: 'from-green-500 to-emerald-500',
-      href: '/services/qr-codes'
+      href: '/services/travel'
     }
   ]
 
@@ -699,9 +683,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Animations */}
-
     </div>
   )
 }
