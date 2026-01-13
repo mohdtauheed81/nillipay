@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 /* Animation keyframes */
 @keyframes fadeIn {
   from {

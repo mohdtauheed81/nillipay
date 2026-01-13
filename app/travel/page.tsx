@@ -140,15 +140,15 @@ export default function TravelPage() {
   ]
 
   return (
-    <div className="bg-white">
-      <section className="bg-gradient-to-r from-blue-50 to-purple-50 py-6 border-b border-gray-200">
+    <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
+      <section className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-6 border-b border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+            <Link href="/" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               <Home className="w-4 h-4" />
             </Link>
-            <ChevronRight className="w-4 h-4 text-gray-400" />
-            <span className="text-blue-600 font-medium">Travel</span>
+            <ChevronRight className="w-4 h-4 text-gray-400 dark:text-gray-600" />
+            <span className="text-blue-600 dark:text-blue-400 font-medium">Travel</span>
           </div>
         </div>
       </section>
@@ -232,13 +232,13 @@ export default function TravelPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Book Everything in One Place
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               From flights to hotels, we've got your entire journey covered
             </p>
           </div>
@@ -247,15 +247,15 @@ export default function TravelPage() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2"
+                className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2"
               >
                 <div className={`inline-flex w-16 h-16 items-center justify-center rounded-2xl bg-gradient-to-br ${feature.color} text-white mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform`}>
                   <feature.icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -265,13 +265,13 @@ export default function TravelPage() {
       </section>
 
       {/* Travel Services Details */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Comprehensive Travel Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Everything you need for a seamless travel experience
             </p>
           </div>
@@ -280,13 +280,13 @@ export default function TravelPage() {
             {travelServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-xl transition-all"
+                className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-800/50 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all"
               >
                 <div className="flex items-start space-x-4 mb-6">
-                  <div className="bg-blue-100 rounded-xl p-3">
-                    <service.icon className="w-8 h-8 text-blue-600" />
+                  <div className="bg-blue-100 dark:bg-blue-900/30 rounded-xl p-3">
+                    <service.icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mt-2">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
                     {service.title}
                   </h3>
                 </div>
@@ -294,7 +294,7 @@ export default function TravelPage() {
                   {service.items.map((item, idx) => (
                     <li key={idx} className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{item}</span>
+                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -305,13 +305,13 @@ export default function TravelPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Why Choose Our Travel Platform?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Trusted by millions of travelers across India
             </p>
           </div>
@@ -320,15 +320,15 @@ export default function TravelPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all"
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all"
               >
                 <div className="bg-gradient-to-br from-blue-500 to-indigo-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                   <benefit.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-400">
                   {benefit.description}
                 </p>
               </div>
@@ -338,13 +338,13 @@ export default function TravelPage() {
       </section>
 
       {/* Popular Destinations */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Popular Destinations
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Explore trending travel destinations across India
             </p>
           </div>
@@ -353,10 +353,10 @@ export default function TravelPage() {
             {popularDestinations.map((destination, index) => (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 text-center hover:shadow-lg transition-all cursor-pointer transform hover:-translate-y-1"
+                className="group bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 text-center hover:shadow-lg transition-all cursor-pointer transform hover:-translate-y-1"
               >
                 <div className="text-5xl mb-3">{destination.image}</div>
-                <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {destination.name}
                 </h3>
               </div>

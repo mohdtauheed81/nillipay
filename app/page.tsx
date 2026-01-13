@@ -157,45 +157,45 @@ export default function Home() {
   return (
     <div className="">
       {/* ==================== HERO SECTION ==================== */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 py-20 overflow-hidden transition-colors duration-300">
         {/* Background Decorations */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 dark:bg-blue-900/20 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 dark:bg-purple-900/20 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 dark:bg-pink-900/20 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center bg-white border border-blue-200 px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="inline-flex items-center bg-white dark:bg-gray-800 border border-blue-200 dark:border-blue-900 px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm hover:shadow-md transition-all">
                 <Star className="w-4 h-4 mr-2 text-yellow-500" fill="currentColor" />
-                <span className="text-gray-700">Trusted by </span>
-                <span className="text-blue-600 font-semibold ml-1">50,000+ businesses</span>
+                <span className="text-gray-700 dark:text-gray-300">Trusted by </span>
+                <span className="text-blue-600 dark:text-blue-400 font-semibold ml-1">50,000+ businesses</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 Accept Payments
                 <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Faster & Secure
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
                 India's most secure payment gateway solution. Start accepting payments online with our easy-to-integrate APIs and grow your business exponentially.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8 text-left">
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">No setup fees</span>
+                  <span className="text-gray-700 dark:text-gray-300">No setup fees</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Free integration support</span>
+                  <span className="text-gray-700 dark:text-gray-300">Free integration support</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Cancel anytime</span>
+                  <span className="text-gray-700 dark:text-gray-300">Cancel anytime</span>
                 </div>
               </div>
 
@@ -209,7 +209,7 @@ export default function Home() {
                 </Link>
                 <button
                   onClick={() => setIsVideoPlaying(true)}
-                  className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl hover:border-blue-600 hover:text-blue-600 transition-all font-semibold inline-flex items-center justify-center"
+                  className="group border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 px-8 py-4 rounded-xl hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-semibold inline-flex items-center justify-center"
                 >
                   <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
                   Watch Demo
@@ -217,12 +217,12 @@ export default function Home() {
               </div>
 
               <div className="text-center lg:text-left">
-                <p className="text-sm text-gray-500 mb-4 font-medium">TRUSTED BY LEADING COMPANIES</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 font-medium">TRUSTED BY LEADING COMPANIES</p>
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start items-center">
                   {trustedCompanies.map((company, index) => (
                     <div
                       key={index}
-                      className="text-gray-400 font-semibold text-lg hover:text-gray-600 transition-colors"
+                      className="text-gray-400 dark:text-gray-500 font-semibold text-lg hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                     >
                       {company}
                     </div>
@@ -233,43 +233,43 @@ export default function Home() {
 
             {/* Right Content - Dashboard Preview */}
             <div className="relative">
-              <div className="relative bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+              <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 border border-gray-100 dark:border-gray-700 transition-colors">
                 <div className="space-y-6">
-                  <div className="flex items-center justify-between pb-4 border-b">
-                    <h3 className="text-xl font-bold text-gray-900">Transaction Overview</h3>
+                  <div className="flex items-center justify-between pb-4 border-b dark:border-gray-700">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Transaction Overview</h3>
                     <span className="text-green-500 font-semibold text-sm">● Live</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl">
-                      <div className="text-sm text-gray-600 mb-1">Today's Revenue</div>
-                      <div className="text-2xl font-bold text-gray-900">₹1,24,500</div>
-                      <div className="text-xs text-green-600 mt-1">+12.5% ↑</div>
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/40 dark:to-blue-800/40 p-4 rounded-xl">
+                      <div className="text-sm text-gray-600 dark:text-gray-300 mb-1">Today's Revenue</div>
+                      <div className="text-2xl font-bold text-gray-900 dark:text-white">₹1,24,500</div>
+                      <div className="text-xs text-green-600 dark:text-green-400 mt-1">+12.5% ↑</div>
                     </div>
-                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-xl">
-                      <div className="text-sm text-gray-600 mb-1">Transactions</div>
-                      <div className="text-2xl font-bold text-gray-900">2,847</div>
-                      <div className="text-xs text-green-600 mt-1">+8.2% ↑</div>
+                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/40 dark:to-purple-800/40 p-4 rounded-xl">
+                      <div className="text-sm text-gray-600 dark:text-gray-300 mb-1">Transactions</div>
+                      <div className="text-2xl font-bold text-gray-900 dark:text-white">2,847</div>
+                      <div className="text-xs text-green-600 dark:text-green-400 mt-1">+8.2% ↑</div>
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-700 mb-3">Recent Transactions</h4>
+                    <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Recent Transactions</h4>
                     <div className="space-y-3">
                       {[1, 2, 3].map((item) => (
-                        <div key={item} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <div key={item} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                           <div className="flex items-center space-x-3">
                             <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
                               {item}
                             </div>
                             <div>
-                              <div className="font-medium text-gray-900">Payment #{1000 + item}</div>
-                              <div className="text-xs text-gray-500">2 min ago</div>
+                              <div className="font-medium text-gray-900 dark:text-white">Payment #{1000 + item}</div>
+                              <div className="text-xs text-gray-500 dark:text-gray-400">2 min ago</div>
                             </div>
                           </div>
                           <div className="text-right">
-                            <div className="font-semibold text-gray-900">₹{(Math.random() * 5000 + 500).toFixed(2)}</div>
-                            <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full">Success</span>
+                            <div className="font-semibold text-gray-900 dark:text-white">₹{(Math.random() * 5000 + 500).toFixed(2)}</div>
+                            <span className="text-xs text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded-full">Success</span>
                           </div>
                         </div>
                       ))}
@@ -277,26 +277,26 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg p-4 border border-gray-100 animate-float">
+                <div className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 border border-gray-100 dark:border-gray-700 animate-float">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                      <CheckCircle className="w-6 h-6 text-green-600" />
+                    <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400" />
                     </div>
                     <div>
-                      <div className="text-xs text-gray-500">Success Rate</div>
-                      <div className="text-lg font-bold text-gray-900">99.9%</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">Success Rate</div>
+                      <div className="text-lg font-bold text-gray-900 dark:text-white">99.9%</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-gray-100 animate-float animation-delay-2000">
+                <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 border border-gray-100 dark:border-gray-700 animate-float animation-delay-2000">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <ArrowRight className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                      <ArrowRight className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                     </div>
                     <div>
-                      <div className="text-xs text-gray-500">Avg Settlement</div>
-                      <div className="text-lg font-bold text-gray-900">24 hrs</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">Avg Settlement</div>
+                      <div className="text-lg font-bold text-gray-900 dark:text-white">24 hrs</div>
                     </div>
                   </div>
                 </div>
@@ -307,18 +307,18 @@ export default function Home() {
       </section>
 
       {/* ==================== STATS SECTION ==================== */}
-      <section className="py-20 bg-white border-y border-gray-200">
+      <section className="py-20 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full">
+              <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
                 Our Impact
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Trusted by Thousands
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Numbers that speak for our reliability and commitment to excellence
             </p>
           </div>
@@ -327,7 +327,7 @@ export default function Home() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className={`group relative bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200 hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
+                className={`group relative bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
                   isStatsVisible ? `animate-fadeInUp ${stat.delay}` : 'opacity-0'
                 }`}
               >
@@ -340,13 +340,13 @@ export default function Home() {
                 </div>
 
                 <div className="relative">
-                  <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
+                  <div className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
                     {stat.value}
                   </div>
-                  <div className="text-lg font-semibold text-gray-900 mb-1">
+                  <div className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                     {stat.label}
                   </div>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
                     {stat.description}
                   </div>
                 </div>
@@ -356,40 +356,40 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-12">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 dark:border-gray-800 pt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
-              <div className="text-gray-600">Payment Methods</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">15+</div>
+              <div className="text-gray-600 dark:text-gray-400">Payment Methods</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">100+</div>
-              <div className="text-gray-600">Supported Banks</div>
+              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">100+</div>
+              <div className="text-gray-600 dark:text-gray-400">Supported Banks</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-orange-600 mb-2">135+</div>
-              <div className="text-gray-600">Countries</div>
+              <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">135+</div>
+              <div className="text-gray-600 dark:text-gray-400">Countries</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">&lt;2s</div>
-              <div className="text-gray-600">Transaction Time</div>
+              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">&lt;2s</div>
+              <div className="text-gray-600 dark:text-gray-400">Transaction Time</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ==================== FEATURES SECTION ==================== */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full">
+              <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
                 Features
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Why Choose NeeliPay?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Built for businesses of all sizes with enterprise-grade features that help you accept payments securely and grow faster
             </p>
           </div>
@@ -398,7 +398,7 @@ export default function Home() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative bg-white p-8 rounded-2xl border border-gray-200 hover:border-transparent hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-transparent hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
 
@@ -409,10 +409,10 @@ export default function Home() {
                 </div>
 
                 <div className="relative">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -423,12 +423,12 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-16">
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               Want to see all features in action?
             </p>
             <a
               href="/features"
-              className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors group"
+              className="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors group"
             >
               View All Features
               <svg
@@ -450,18 +450,18 @@ export default function Home() {
       </section>
 
       {/* ==================== SERVICES SECTION ==================== */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full">
+              <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
                 Our Services
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Complete Payment Solutions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Everything you need to accept payments online, in-store, and on-the-go. Choose the solution that fits your business needs
             </p>
           </div>
@@ -470,7 +470,7 @@ export default function Home() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                className="group relative bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               >
                 <div className={`h-2 bg-gradient-to-r ${service.gradient}`}></div>
 
@@ -479,16 +479,16 @@ export default function Home() {
                     <service.icon className="w-8 h-8" />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                     {service.description}
                   </p>
 
                   <ul className="space-y-3 mb-6">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700">
+                      <li key={idx} className="flex items-center text-gray-700 dark:text-gray-300">
                         <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
@@ -497,7 +497,7 @@ export default function Home() {
 
                   <Link
                     href={service.href}
-                    className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors group/link"
+                    className="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors group/link"
                   >
                     Learn More
                     <ArrowRight className="w-5 h-5 ml-2 group-hover/link:translate-x-1 transition-transform" />
@@ -608,7 +608,7 @@ export default function Home() {
       </section>
 
       {/* Secondary CTA Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-orange-500 to-pink-500 rounded-3xl p-8 md:p-12 shadow-xl">
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -636,38 +636,38 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h4 className="text-2xl font-bold text-gray-900 mb-6">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-2xl transition-colors">
+                <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   Schedule a Demo
                 </h4>
                 <form className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Full Name
                     </label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Business Email
                     </label>
                     <input
                       type="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       placeholder="john@company.com"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Phone Number
                     </label>
                     <input
                       type="tel"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       placeholder="+91 98765 43210"
                     />
                   </div>

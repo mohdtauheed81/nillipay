@@ -228,59 +228,59 @@ export default function BBPSPage() {
   ]
 
   return (
-    <div className="">
+    <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* ==================== BREADCRUMB ==================== */}
-      <section className="bg-gradient-to-r from-blue-50 to-purple-50 py-6 border-b border-gray-200">
+      <section className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-6 border-b border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+            <Link href="/" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               <Home className="w-4 h-4" />
             </Link>
 
-            <ChevronRight className="w-4 h-4 text-gray-400" />
-            <span className="text-blue-600 font-medium">BBPS</span>
+            <ChevronRight className="w-4 h-4 text-gray-400 dark:text-gray-600" />
+            <span className="text-blue-600 dark:text-blue-400 font-medium">BBPS</span>
           </div>
         </div>
       </section>
 
       {/* ==================== HERO SECTION ==================== */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 py-20 overflow-hidden">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center bg-white border border-blue-200 px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm">
+              <div className="inline-flex items-center bg-white dark:bg-gray-800 border border-blue-200 dark:border-blue-900 px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm">
                 <Star className="w-4 h-4 mr-2 text-yellow-500" fill="currentColor" />
-                <span className="text-gray-700">RBI Authorized </span>
-                <span className="text-blue-600 font-semibold ml-1">BBPS Platform</span>
+                <span className="text-gray-700 dark:text-gray-300">RBI Authorized </span>
+                <span className="text-blue-600 dark:text-blue-400 font-semibold ml-1">BBPS Platform</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 Pay All Your Bills
                 <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   In One Place
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
                 Complete BBPS bill payment solution for your business. Integrate our API and offer seamless bill payments across 1500+ billers to your customers.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8 text-left">
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Zero integration fees</span>
+                  <span className="text-gray-700 dark:text-gray-300">Zero integration fees</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Instant confirmation</span>
+                  <span className="text-gray-700 dark:text-gray-300">Instant confirmation</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">24/7 available</span>
+                  <span className="text-gray-700 dark:text-gray-300">24/7 available</span>
                 </div>
               </div>
 
@@ -294,7 +294,7 @@ export default function BBPSPage() {
                 </Link>
                 <Link
                   href="#categories"
-                  className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl hover:border-blue-600 hover:text-blue-600 transition-all font-semibold inline-flex items-center justify-center"
+                  className="group border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 px-8 py-4 rounded-xl hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-semibold inline-flex items-center justify-center"
                 >
                   View All Categories
                 </Link>
@@ -303,10 +303,10 @@ export default function BBPSPage() {
 
             {/* Right Content - Visual */}
             <div className="relative">
-              <div className="relative bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+              <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 border border-gray-100 dark:border-gray-700 transition-colors">
                 <div className="space-y-6">
-                  <div className="flex items-center justify-between pb-4 border-b">
-                    <h3 className="text-xl font-bold text-gray-900">Bill Categories</h3>
+                  <div className="flex items-center justify-between pb-4 border-b dark:border-gray-700">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Bill Categories</h3>
                     <span className="text-green-500 font-semibold text-sm">● Active</span>
                   </div>
 
@@ -321,22 +321,22 @@ export default function BBPSPage() {
                     ].map((item, idx) => (
                       <div
                         key={idx}
-                        className="flex flex-col items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all cursor-pointer group"
+                        className="flex flex-col items-center p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all cursor-pointer group"
                       >
                         <div className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform`}>
                           <item.icon className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-xs font-medium text-gray-700 text-center">{item.name}</span>
+                        <span className="text-xs font-medium text-gray-700 dark:text-gray-300 text-center">{item.name}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl">
+                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 rounded-xl">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-gray-600">Total Billers</span>
-                      <span className="text-2xl font-bold text-gray-900">1500+</span>
+                      <span className="text-sm text-gray-600 dark:text-gray-300">Total Billers</span>
+                      <span className="text-2xl font-bold text-gray-900 dark:text-white">1500+</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                       <div className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full" style={{ width: '100%' }}></div>
                     </div>
                   </div>
@@ -348,13 +348,13 @@ export default function BBPSPage() {
       </section>
 
       {/* ==================== STATS SECTION ==================== */}
-      <section className="py-20 bg-white border-y border-gray-200">
+      <section className="py-20 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200 hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                className="group relative bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
 
@@ -365,13 +365,13 @@ export default function BBPSPage() {
                 </div>
 
                 <div className="relative">
-                  <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+                  <div className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-lg font-semibold text-gray-900 mb-1">
+                  <div className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                     {stat.label}
                   </div>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
                     {stat.description}
                   </div>
                 </div>
@@ -382,18 +382,18 @@ export default function BBPSPage() {
       </section>
 
       {/* ==================== HOW IT WORKS ==================== */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full">
+              <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider bg-blue-50 dark:bg-blue-900/30 px-4 py-2 rounded-full">
                 How It Works
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Simple 4-Step Process
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Pay any bill in just a few clicks with our streamlined process
             </p>
           </div>
@@ -401,24 +401,24 @@ export default function BBPSPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {howItWorks.map((item, index) => (
               <div key={index} className="relative">
-                <div className="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 h-full">
+                <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 h-full">
                   <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                     <span className="text-white font-bold text-xl">{item.step}</span>
                   </div>
 
                   <div className="mb-6 mt-4">
-                    <div className="inline-flex w-14 h-14 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+                    <div className="inline-flex w-14 h-14 items-center justify-center rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
                       <item.icon className="w-7 h-7" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{item.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
                 </div>
 
                 {index < howItWorks.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                    <ArrowRight className="w-8 h-8 text-blue-300" />
+                    <ArrowRight className="w-8 h-8 text-blue-300 dark:text-blue-700" />
                   </div>
                 )}
               </div>
@@ -428,18 +428,18 @@ export default function BBPSPage() {
       </section>
 
       {/* ==================== BILL CATEGORIES ==================== */}
-      <section id="categories" className="py-20 bg-white">
+      <section id="categories" className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full">
+              <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider bg-blue-50 dark:bg-blue-900/30 px-4 py-2 rounded-full">
                 Bill Categories
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Pay Bills Across 20+ Categories
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               From utilities to loans, pay all your bills through our comprehensive BBPS platform
             </p>
           </div>
@@ -448,7 +448,7 @@ export default function BBPSPage() {
             {billCategories.map((category, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                className="group relative bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               >
                 <div className={`h-2 bg-gradient-to-r ${category.gradient}`}></div>
 
@@ -459,31 +459,31 @@ export default function BBPSPage() {
 
                   <div className="mb-4">
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {category.title}
                       </h3>
                       <span className={`text-xs font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${category.gradient} text-white`}>
                         {category.count}
                       </span>
                     </div>
-                    <p className="text-gray-600 leading-relaxed mb-4">
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
                       {category.description}
                     </p>
                   </div>
 
                   <div className="space-y-2">
-                    <p className="text-sm font-semibold text-gray-700">Popular Billers:</p>
+                    <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Popular Billers:</p>
                     <div className="flex flex-wrap gap-2">
                       {category.billers.slice(0, 3).map((biller, idx) => (
                         <span
                           key={idx}
-                          className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
+                          className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full"
                         >
                           {biller}
                         </span>
                       ))}
                       {category.billers.length > 3 && (
-                        <span className="text-xs bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-semibold">
+                        <span className="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full font-semibold">
                           +{category.billers.length - 3} more
                         </span>
                       )}
@@ -497,18 +497,18 @@ export default function BBPSPage() {
       </section>
 
       {/* ==================== FEATURES SECTION ==================== */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full">
+              <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider bg-blue-50 dark:bg-blue-900/30 px-4 py-2 rounded-full">
                 Features
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Why Choose Our BBPS Solution?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Enterprise-grade features designed for seamless bill payment experience
             </p>
           </div>
@@ -517,7 +517,7 @@ export default function BBPSPage() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative bg-white p-8 rounded-2xl border border-gray-200 hover:border-transparent hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-transparent hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
 
@@ -528,10 +528,10 @@ export default function BBPSPage() {
                 </div>
 
                 <div className="relative">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
