@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown, Receipt, Globe } from 'lucide-react'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import Image from 'next/image'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -90,7 +91,8 @@ export default function Header() {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -120,22 +122,25 @@ export default function Header() {
       `}} />
       <header
         suppressHydrationWarning
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          mounted && isScrolled
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${mounted && isScrolled
             ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg'
             : 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md'
-        }`}
+          }`}
       >
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 z-50">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center transform hover:scale-105 transition-transform">
-                <span className="text-white font-bold text-xl">N</span>
+              <div className=" rounded-xl overflow-hidden flex items-center justify-center transform hover:scale-105 transition-transform">
+                <Image
+                  src="/logo.png"
+                  alt="NeeliPay Logo"
+                  width={80}
+                  height={80}
+                  className="object-contain"
+                />
               </div>
-              <span className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
-                NeeliPay
-              </span>
+
             </Link>
 
             {/* Desktop Navigation */}
@@ -158,16 +163,14 @@ export default function Header() {
                   {item.hasDropdown ? (
                     <>
                       <button
-                        className={`flex items-center space-x-1 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                          isActive(item.href) || servicesDropdown
+                        className={`flex items-center space-x-1 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${isActive(item.href) || servicesDropdown
                             ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
                             : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                        }`}
+                          }`}
                       >
                         <span>{item.name}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                          servicesDropdown ? 'rotate-180' : ''
-                        }`} />
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${servicesDropdown ? 'rotate-180' : ''
+                          }`} />
                       </button>
 
                       {/* Dropdown Menu */}
@@ -204,11 +207,10 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                        isActive(item.href)
+                      className={`px-4 py-2 rounded-lg font-medium transition-colors ${isActive(item.href)
                           ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
                           : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                      }`}
+                        }`}
                     >
                       {item.name}
                     </Link>
@@ -253,9 +255,8 @@ export default function Header() {
                         className="w-full flex items-center justify-between px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                       >
                         <span className="font-medium">{item.name}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                          servicesDropdown ? 'rotate-180' : ''
-                        }`} />
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${servicesDropdown ? 'rotate-180' : ''
+                          }`} />
                       </button>
 
                       {/* Mobile Dropdown Content */}
@@ -286,11 +287,10 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`block px-4 py-3 font-medium transition-colors ${
-                        isActive(item.href)
+                      className={`block px-4 py-3 font-medium transition-colors ${isActive(item.href)
                           ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
                           : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
-                      }`}
+                        }`}
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}

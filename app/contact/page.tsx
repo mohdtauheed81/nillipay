@@ -285,8 +285,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
-                      <p className="text-blue-100">support@bankpay.in</p>
-                      <p className="text-blue-100">sales@bankpay.in</p>
+                      <p className="text-blue-100">neelipay@gmail.com</p>
+
                     </div>
                   </div>
 
@@ -296,8 +296,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Phone</h4>
-                      <p className="text-blue-100">+91 1800-123-4567 (Toll Free)</p>
-                      <p className="text-blue-100">+91 22 1234 5678 (Mumbai)</p>
+                      <p className="text-blue-100">+91 9440373733</p>
+
                     </div>
                   </div>
 
@@ -313,6 +313,8 @@ export default function ContactPage() {
                     </div>
                   </div>
 
+
+
                   <div className="flex items-start space-x-4">
                     <div className="bg-white/20 rounded-lg p-3">
                       <MapPin className="w-6 h-6" />
@@ -320,9 +322,10 @@ export default function ContactPage() {
                     <div>
                       <h4 className="font-semibold mb-1">Head Office</h4>
                       <p className="text-blue-100">
-                        BankPay Technologies Pvt Ltd<br />
-                        Bandra Kurla Complex<br />
-                        Mumbai - 400051, India
+                        NeeliPay Technologies Pvt Ltd<br />
+                        Building No: 03-X-Zone, Flat No : 026/B02<br />
+                         Gandhi Chowk, Tenali, Guntur <br />
+                         Andhra Pradesh - 522201, India.
                       </p>
                     </div>
                   </div>
@@ -367,7 +370,7 @@ export default function ContactPage() {
       </section>
 
       {/* Office Locations */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
+      {/* <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -408,7 +411,7 @@ export default function ContactPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors">

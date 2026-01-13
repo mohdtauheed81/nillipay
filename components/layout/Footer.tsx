@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Footer() {
   const [year, setYear] = useState(2025)
@@ -38,11 +39,17 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
           {/* Brand Column */}
           <div className="col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">N</span>
+             <Link href="/" className="flex items-center space-x-2 z-50">
+              <div className=" rounded-xl overflow-hidden flex items-center justify-center transform hover:scale-105 transition-transform">
+                <Image
+                  src="/logo.png"
+                  alt="NeeliPay Logo"
+                  width={80}
+                  height={80}
+                  className="object-contain"
+                />
               </div>
-              <span className="text-xl font-bold text-gray-900 dark:text-white">NeeliPay</span>
+
             </Link>
             <p className="text-gray-500 dark:text-gray-400 mb-6 max-w-xs">
               Secure and reliable payment gateway solutions for businesses of all sizes.
@@ -136,7 +143,7 @@ export default function Footer() {
               <div>
                 <p className="text-gray-900 dark:text-white font-medium mb-1">Email</p>
                 <a href="mailto:support@neelipay.in" className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors text-sm">
-                  support@neelipay.in
+                  neelipay@gmail.com
                 </a>
                 <br />
 
@@ -151,11 +158,9 @@ export default function Footer() {
               <div>
                 <p className="text-gray-900 dark:text-white font-medium mb-1">Phone</p>
                 <a href="tel:+911800123456" className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors text-sm block">
-                  +91 1800-123-4567 (Toll Free)
+                  +91 9440373733
                 </a>
-                <a href="tel:+912212345678" className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors text-sm block">
-                  +91 22 1234 5678
-                </a>
+
               </div>
             </div>
 
@@ -168,8 +173,9 @@ export default function Footer() {
                 <p className="text-gray-900 dark:text-white font-medium mb-1">Address</p>
                 <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                   NeeliPay Technologies Pvt Ltd<br />
-                  Bandra Kurla Complex<br />
-                  Mumbai - 400051, India
+                  Building No: 03-X-Zone, Flat No : 026/B02<br />
+                  Gandhi Chowk, Tenali, Guntur <br />
+                  Andhra Pradesh - 522201, India.
                 </p>
               </div>
             </div>

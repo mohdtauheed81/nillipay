@@ -17,7 +17,8 @@ import {
   CreditCard,
   Percent,
   ChevronRight,
-  Home
+  Home,
+  Map
 } from 'lucide-react'
 
 export default function TravelPage() {
@@ -129,14 +130,14 @@ export default function TravelPage() {
   ]
 
   const popularDestinations = [
-    { name: 'Mumbai', image: '🏙️' },
-    { name: 'Delhi', image: '🕌' },
-    { name: 'Goa', image: '🏖️' },
-    { name: 'Bangalore', image: '🌳' },
-    { name: 'Jaipur', image: '🏰' },
-    { name: 'Kerala', image: '🌴' },
-    { name: 'Manali', image: '⛰️' },
-    { name: 'Agra', image: '🕌' }
+    { name: 'Mumbai', Icon: Map, color: 'from-blue-500 to-cyan-500' },
+    { name: 'Delhi', Icon: Map, color: 'from-red-500 to-orange-500' },
+    { name: 'Goa', Icon: Map, color: 'from-amber-500 to-yellow-500' },
+    { name: 'Bangalore', Icon: Map, color: 'from-green-500 to-emerald-500' },
+    { name: 'Jaipur', Icon: Map, color: 'from-pink-500 to-rose-500' },
+    { name: 'Kerala', Icon: Map, color: 'from-teal-500 to-cyan-500' },
+    { name: 'Manali', Icon: Map, color: 'from-indigo-500 to-purple-500' },
+    { name: 'Agra', Icon: Map, color: 'from-violet-500 to-purple-500' }
   ]
 
   return (
@@ -350,17 +351,22 @@ export default function TravelPage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {popularDestinations.map((destination, index) => (
-              <div
-                key={index}
-                className="group bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 text-center hover:shadow-lg transition-all cursor-pointer transform hover:-translate-y-1"
-              >
-                <div className="text-5xl mb-3">{destination.image}</div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {destination.name}
-                </h3>
-              </div>
-            ))}
+            {popularDestinations.map((destination, index) => {
+              const Icon = destination.Icon
+              return (
+                <div
+                  key={index}
+                  className="group bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 text-center hover:shadow-lg transition-all cursor-pointer transform hover:-translate-y-1"
+                >
+                  <div className={`inline-flex w-14 h-14 items-center justify-center rounded-full bg-gradient-to-br ${destination.color} text-white mb-3 transform group-hover:scale-110 transition-transform`}>
+                    <Icon className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {destination.name}
+                  </h3>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -397,52 +403,6 @@ export default function TravelPage() {
           </div>
         </div>
       </section>
-
-      {/* Integration CTA */}
-      {/* <section className="py-20 bg-gray-700 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                  Want to Integrate Travel API?
-                </h3>
-                <p className="text-blue-100 text-lg mb-6">
-                  Power your platform with our comprehensive travel booking API. Quick integration, detailed documentation, and dedicated support.
-                </p>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-300 flex-shrink-0" />
-                    <span>RESTful API with JSON responses</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-300 flex-shrink-0" />
-                    <span>Real-time availability & pricing</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-300 flex-shrink-0" />
-                    <span>Sandbox environment for testing</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-                <MapPin className="w-12 h-12 text-white mb-4" />
-                <h4 className="text-2xl font-bold mb-4">Developer Resources</h4>
-                <p className="text-blue-100 mb-6">
-                  Access our comprehensive API documentation and start integrating travel services today.
-                </p>
-                <Link
-                  href="/docs"
-                  className="inline-flex items-center text-white font-semibold bg-white/20 hover:bg-white/30 px-6 py-3 rounded-lg transition-colors"
-                >
-                  View API Docs
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </div>
   )
 }
